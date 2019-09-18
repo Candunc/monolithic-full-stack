@@ -4,9 +4,6 @@
 [submodule "generic"]
 	path = generic
 	url = https://github.com/lancachenet/generic
-[submodule "ubuntu-nginx"]
-	path = ubuntu-nginx
-	url = https://github.com/lancachenet/ubuntu-nginx
 [submodule "lancache-dns"]
 	path = lancache-dns
 	url = https://github.com/lancachenet/lancache-dns
