@@ -37,7 +37,7 @@ rm ./10_generate_config.sh
 
 ## BEGIN generic
 
-cp -a ./generic/etc/nginx /etc/
+cp -a ./generic/overlay/etc/nginx /etc/
 
 WEBUSER=www-data
 CACHE_MEM_SIZE=500m
@@ -50,11 +50,12 @@ NGINX_WORKER_PROCESSES=16
 
 . ./generic/overlay/hooks/entrypoint-pre.d/10_setup.sh
 
+mkdir /etc/nginx/sites-enabled/
 ln -s /etc/nginx/sites-available/10_generic.conf /etc/nginx/sites-enabled/10_generic.conf
 
 ## BEGIN monolithic
 
-cp -a ./monolithic/etc/nginx /etc/
+cp -a ./monolithic/overlay/etc/nginx /etc/
 
 cp ./monolithic/overlay/hooks/entrypoint-pre.d/15_generate_maps.sh ./
 sed -i -e 's:/data/cachedomains:./cache-domains:' ./15_generate_maps.sh
